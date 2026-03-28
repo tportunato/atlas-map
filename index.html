@@ -174,9 +174,10 @@
       flex-direction: column;
       padding: 14px 8px;
       gap: 7px;
-      width: 90px;
+      width: 112px;
       flex-shrink: 0;
       border-right: 2px solid #0F2744;
+      align-items: stretch;
     }
     .sidebar-label {
       font-size: 9px; color: rgba(255,255,255,.45);
@@ -359,6 +360,17 @@
     <button class="ind-btn" id="i-ca"  onclick="setInd('ca',this)">Curr. account</button>
   </div>
 
+  <!-- Scrubber — above map -->
+  <div id="scrubber">
+    <div id="yrd">2025</div>
+    <div class="scrub-row">
+      <button id="play-btn" onclick="togglePlay()">▶ Play</button>
+      <span class="scrub-lbl">2010</span>
+      <input type="range" id="yslider" min="2010" max="2026" value="2025" step="1" oninput="onYr(+this.value)">
+      <span class="scrub-lbl" style="text-align:right">2026</span>
+    </div>
+  </div>
+
   <!-- Map area -->
   <div id="map-area">
 
@@ -406,17 +418,6 @@
 
   <!-- Status -->
   <div id="status">Loading map data…</div>
-
-  <!-- Scrubber -->
-  <div id="scrubber">
-    <div id="yrd">2025</div>
-    <div class="scrub-row">
-      <button id="play-btn" onclick="togglePlay()">▶ Play</button>
-      <span class="scrub-lbl">2010</span>
-      <input type="range" id="yslider" min="2010" max="2026" value="2025" step="1" oninput="onYr(+this.value)">
-      <span class="scrub-lbl" style="text-align:right">2026</span>
-    </div>
-  </div>
 
 </div><!-- /app -->
 
