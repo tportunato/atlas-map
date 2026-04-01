@@ -189,9 +189,165 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .dm-tag-live{background:#E8F5EE;color:#1a6b3a}
 .dm-tag-static{background:#FEF5E7;color:#7a5200}
 .api-note{font-size:9px;color:#aaa;text-align:center;margin-top:12px;line-height:1.5;padding-top:10px;border-top:1px solid #F0EDE8}
+
+/* ── LANDING SCREEN ─────────────────────────────────────────────────────────── */
+#landing{position:fixed;inset:0;z-index:1000;background:#fff;overflow-y:auto;display:flex;flex-direction:column}
+#landing.hidden{display:none}
+.ld-nav{background:#0F2744;height:56px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.ld-nav-l{display:flex;align-items:center;gap:10px}
+.ld-nav-logo{height:34px;width:34px;object-fit:contain}
+.ld-nav-divider{width:0.5px;height:16px;background:rgba(255,255,255,.15)}
+.ld-nav-name{font-size:13px;font-weight:600;color:#fff;letter-spacing:.01em}
+.ld-nav-dot{width:4px;height:4px;border-radius:50%;background:#C8692A}
+.ld-nav-eyebrow{font-size:9px;font-weight:600;letter-spacing:.09em;color:rgba(255,255,255,.3);text-transform:uppercase}
+.ld-hero{background:#0F2744;padding:100px 48px 110px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.ld-hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:28px}
+.ld-hero h1{font-size:40px;font-weight:600;color:#fff;margin:0 0 20px;letter-spacing:-.025em;line-height:1.15;max-width:600px}
+.ld-hero p{font-size:15px;color:rgba(255,255,255,.5);margin:0 0 48px;max-width:440px;line-height:1.7;font-weight:400}
+.ld-btn{padding:12px 28px;background:#C8692A;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.01em;transition:background .15s;font-family:'DM Sans',sans-serif}
+.ld-btn:hover{background:#A85520}
+.ld-hero-note{font-size:11px;color:rgba(255,255,255,.2);margin-top:14px}
+.ld-workflow{background:#fff;padding:80px 48px}
+.ld-features{background:#F7F5F1;padding:64px 48px}
+.ld-ai{background:#0F2744;padding:48px}
+.ld-footer{background:#fff;padding:24px 48px;border-top:0.5px solid #E8E5DE;margin-top:auto}
+.ld-footer-text{font-size:11px;color:#cccccc;text-align:center}
+.ld-inner{max-width:900px;margin:0 auto}
+.ld-section-eyebrow{font-size:10px;font-weight:600;letter-spacing:.1em;color:#aaa;text-transform:uppercase;margin-bottom:48px;text-align:center}
+.ld-features-eyebrow{font-size:10px;font-weight:600;letter-spacing:.1em;color:#aaa;text-transform:uppercase;margin-bottom:40px;text-align:center}
+.ld-steps{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0 40px}
+.ld-step-num-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.ld-step-num{font-size:11px;font-weight:500;color:#C8692A;font-family:monospace}
+.ld-ai-tag{font-size:9px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#7A3A12;background:#FBF0E9;padding:2px 7px;border-radius:20px}
+.ld-step-body{border-top:0.5px solid #E8E5DE;padding-top:20px}
+.ld-step-label{font-size:15px;font-weight:500;color:#0F2744;margin-bottom:10px}
+.ld-step-desc{font-size:13px;color:#888;line-height:1.65}
+.ld-features-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 64px}
+.ld-feature{border-top:0.5px solid #E8E5DE;padding-top:20px}
+.ld-feature-label{font-size:13px;font-weight:500;color:#0F2744;margin-bottom:6px}
+.ld-feature-desc{font-size:13px;color:#888;line-height:1.6}
+.ld-ai-inner{display:flex;align-items:flex-start;gap:80px}
+.ld-ai-left{flex:1}
+.ld-ai-eyebrow{font-size:10px;font-weight:600;letter-spacing:.1em;color:#C8692A;text-transform:uppercase;margin-bottom:16px}
+.ld-ai-headline{font-size:15px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.4}
+.ld-ai-body{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
+.ld-ai-right{display:flex;flex-direction:column;gap:12px;padding-top:38px;flex-shrink:0}
+.ld-ai-pill{display:flex;align-items:center;gap:10px}
+.ld-ai-dot{width:3px;height:3px;border-radius:50%;background:#C8692A}
+.ld-ai-pill-text{font-size:12px;color:rgba(255,255,255,.5)}
 </style>
 </head>
 <body>
+
+<!-- ── LANDING SCREEN (Screen 0) ─────────────────────────────────────────── -->
+<div id="landing">
+
+  <nav class="ld-nav">
+    <div class="ld-nav-l">
+      <img class="ld-nav-logo" src="https://res.cloudinary.com/dsgfts9gp/image/upload/Gemini_Generated_Image_uao02uao02uao02u-remove-bg-io_mb5sys.png" alt="TP">
+      <div class="ld-nav-divider"></div>
+      <span class="ld-nav-name">Atlas</span>
+      <div class="ld-nav-dot"></div>
+      <span class="ld-nav-eyebrow">European Macro Intelligence</span>
+    </div>
+  </nav>
+
+  <div class="ld-hero">
+    <div class="ld-hero-eyebrow">Macro Intelligence Tool</div>
+    <h1>European logistics markets,<br>scored and ranked.</h1>
+    <p>Composite health scoring across 6 macro signals for 29 European countries — with adjustable weights, a time scrubber from 2020 to 2025, and AI-generated investment verdicts.</p>
+    <button class="ld-btn" onclick="enterTool()">Get Started →</button>
+    <div class="ld-hero-note">29 countries · 6 signals · 2020–2025 data</div>
+  </div>
+
+  <div class="ld-workflow">
+    <div class="ld-inner">
+      <div class="ld-section-eyebrow">Four layers</div>
+      <div class="ld-steps">
+        <div>
+          <div class="ld-step-num-row"><span class="ld-step-num">01</span></div>
+          <div class="ld-step-body">
+            <div class="ld-step-label">Map View</div>
+            <div class="ld-step-desc">Pan and zoom a choropleth map of Europe — countries coloured by composite health score in real time.</div>
+          </div>
+        </div>
+        <div>
+          <div class="ld-step-num-row"><span class="ld-step-num">02</span></div>
+          <div class="ld-step-body">
+            <div class="ld-step-label">Signal Controls</div>
+            <div class="ld-step-desc">Toggle signals on or off, adjust weights, and scrub from 2020 to 2025. Rankings and colours update instantly.</div>
+          </div>
+        </div>
+        <div>
+          <div class="ld-step-num-row"><span class="ld-step-num">03</span></div>
+          <div class="ld-step-body">
+            <div class="ld-step-label">Country Panel</div>
+            <div class="ld-step-desc">Click any country to open a detailed breakdown — signal scores, 5-year sparklines, and momentum vs. prior year.</div>
+          </div>
+        </div>
+        <div>
+          <div class="ld-step-num-row">
+            <span class="ld-step-num">04</span>
+            <span class="ld-ai-tag">AI</span>
+          </div>
+          <div class="ld-step-body">
+            <div class="ld-step-label">AI Verdict</div>
+            <div class="ld-step-desc">Claude generates a structured investment verdict — drivers, watch points, and an overall logistics real estate recommendation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ld-features">
+    <div class="ld-inner">
+      <div class="ld-features-eyebrow">What's inside</div>
+      <div class="ld-features-grid">
+        <div class="ld-feature">
+          <div class="ld-feature-label">Composite scoring engine</div>
+          <div class="ld-feature-desc">Weighted average across active signals — normalised per year so scores are always comparable across countries.</div>
+        </div>
+        <div class="ld-feature">
+          <div class="ld-feature-label">Adjustable signal weights</div>
+          <div class="ld-feature-desc">Click any signal to toggle it, slide to reweight. Total weight updates live — the map recolours on every change.</div>
+        </div>
+        <div class="ld-feature">
+          <div class="ld-feature-label">5-year time scrubber</div>
+          <div class="ld-feature-desc">Scroll through 2020–2025 to see how macro conditions evolved. 2025 values are IMF and Eurostat forecasts.</div>
+        </div>
+        <div class="ld-feature">
+          <div class="ld-feature-label">Country ranking</div>
+          <div class="ld-feature-desc">Live-ranked list with trend arrows showing YoY movement — recalculates instantly when weights or signals change.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ld-ai">
+    <div class="ld-inner">
+      <div class="ld-ai-inner">
+        <div class="ld-ai-left">
+          <div class="ld-ai-eyebrow">AI features</div>
+          <div class="ld-ai-headline">Claude acts as a senior analyst on each country</div>
+          <div class="ld-ai-body">For each country and year, Claude synthesises the signal data into a structured verdict — covering the key macro drivers, what's improving or deteriorating, and what to monitor for logistics real estate exposure. Pre-computed in demo mode. No data is transmitted externally.</div>
+        </div>
+        <div class="ld-ai-right">
+          <div class="ld-ai-pill"><div class="ld-ai-dot"></div><span class="ld-ai-pill-text">Investment verdict generation</span></div>
+          <div class="ld-ai-pill"><div class="ld-ai-dot"></div><span class="ld-ai-pill-text">Signal driver identification</span></div>
+          <div class="ld-ai-pill"><div class="ld-ai-dot"></div><span class="ld-ai-pill-text">Risk &amp; watch point flagging</span></div>
+          <div class="ld-ai-pill"><div class="ld-ai-dot"></div><span class="ld-ai-pill-text">Year-on-year momentum reading</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ld-footer">
+    <div class="ld-footer-text">Atlas · European Macro Intelligence · Built by Tomaso Portunato</div>
+  </div>
+
+</div>
+<!-- ── END LANDING ─────────────────────────────────────────────────────────── -->
+
 <div id="app">
 
 <!-- NAV -->
@@ -1414,6 +1570,27 @@ function fakeRefresh() {
   setTimeout(() => { btn.textContent = '↻ Refresh All Sources'; btn.style.background = ''; btn.disabled = false; }, 3500);
 }
 
+// ── LANDING → TOOL TRANSITION ────────────────────────────────────────────────
+function enterTool() {
+  document.getElementById('landing').classList.add('hidden');
+  if (window._mapReady) {
+    setupMap();
+    drawMap();
+    buildRanking();
+    document.getElementById('ld-msg').textContent = '✓ Ready';
+    setTimeout(() => {
+      document.getElementById('ld-msg').textContent = '';
+      selectCountry('NL');
+    }, 400);
+  } else {
+    // Map still loading — setupMap so SVG is sized, draw will fire when fetch resolves
+    setupMap();
+    document.getElementById('ld-msg').textContent = 'Loading map…';
+    // Patch fetch completion to also draw once landing is dismissed
+    window._pendingEnter = true;
+  }
+}
+
 // ── BOOTSTRAP ─────────────────────────────────────────────────────────────────
 buildWeightSliders();
 
@@ -1422,19 +1599,23 @@ window.addEventListener('resize', () => {
   if (features.length) drawMap();
 });
 
-setupMap();
-
+// Preload map data silently in background while landing screen is shown
 fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
   .then(r => r.json())
   .then(topo => {
     features = topojson.feature(topo, topo.objects.countries).features;
-    drawMap();
-    buildRanking();
-    document.getElementById('ld-msg').textContent = '✓ Ready';
-    setTimeout(() => {
-      document.getElementById('ld-msg').textContent = '';
-      selectCountry('NL'); // Open Netherlands by default — DAA's home market
-    }, 400);
+    window._mapReady = true;
+    const landingHidden = document.getElementById('landing').classList.contains('hidden');
+    if (landingHidden || window._pendingEnter) {
+      setupMap();
+      drawMap();
+      buildRanking();
+      document.getElementById('ld-msg').textContent = '✓ Ready';
+      setTimeout(() => {
+        document.getElementById('ld-msg').textContent = '';
+        selectCountry('NL');
+      }, 400);
+    }
   })
   .catch(() => {
     document.getElementById('ld-msg').textContent = 'Map unavailable';
